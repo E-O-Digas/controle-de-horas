@@ -14,7 +14,7 @@ namespace server.Controllers{
 
         [HttpGet]
         public IActionResult GetAllUsers(){
-            return Ok(dbContext.Usuarios.ToList());
+            return Ok(dbContext.Recursos.ToList());
             
         }
     }

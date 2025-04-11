@@ -12,8 +12,8 @@ using server.Db;
 namespace server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250402234317_SetupInicial")]
-    partial class SetupInicial
+    [Migration("20250411192153_InitialSetup")]
+    partial class InitialSetup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,26 +25,31 @@ namespace server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("server.models.Usuario", b =>
+            modelBuilder.Entity("server.Models.Recurso", b =>
                 {
-                    b.Property<Guid>("UsuarioId")
+                    b.Property<Guid>("RecursoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdResponsavel")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Tipo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(1)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UsuarioId");
+                    b.HasKey("RecursoId");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Recursos");
                 });
 #pragma warning restore 612, 618
         }

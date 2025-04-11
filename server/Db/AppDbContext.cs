@@ -5,7 +5,7 @@ namespace server.Db{
     public class AppDbContext : DbContext{
         public AppDbContext(DbContextOptions options) : base(options){}
 
-        public DbSet<Usuario> Usuarios {get; set;}
+        public DbSet<Recurso> Recursos { get; set; }
 
     }
     
