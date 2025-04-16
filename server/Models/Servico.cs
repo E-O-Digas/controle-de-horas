@@ -3,6 +3,9 @@ namespace server.Models{
         public Guid ServicoId { get; set; }
         public decimal Custo { get; set; }
         public string? Descricao { get; set; }
+
+        // public Guid IdEmpresa { get; set; }
+        public Empresa? Empresa { get; set; }
         
     }
 

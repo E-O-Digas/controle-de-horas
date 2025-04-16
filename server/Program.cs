@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using server.Db;
+using server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IRecursoService, RecursoService>();
 
 // Add services to the container.
 builder.Services.AddControllers();

@@ -5,7 +5,8 @@ namespace server.Models{
         public required string Email { get; set; }
         public required string Telefone { get; set; }
 
-        public required Empresa IdEmpresa { get; set; }
-        public string? NomeEmpresa { get; set; } 
+        // public required Guid IdEmpresa { get; set; }
+        public Empresa? Empresa { get; set; }
+        // public string? NomeEmpresa { get; set; } 
     }
 }
